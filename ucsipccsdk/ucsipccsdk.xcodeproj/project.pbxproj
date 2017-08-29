@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		146716071F4C238500B93D72 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146716061F4C238500B93D72 /* AVFoundation.framework */; };
 		ABB900701D23878D00ED431E /* ColorSpaceUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB900661D23878D00ED431E /* ColorSpaceUtilites.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		ABB900711D23878D00ED431E /* FastAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB900691D23878D00ED431E /* FastAddressBook.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		ABB900721D23878D00ED431E /* LinphoneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB9006B1D23878D00ED431E /* LinphoneManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -70,12 +71,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		146716061F4C238500B93D72 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1482ACF01F4AE9B30083B51E /* LinphoneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinphoneManager.h; sourceTree = "<group>"; };
 		ABB900591D23872000ED431E /* libucsipccsdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libucsipccsdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB900661D23878D00ED431E /* ColorSpaceUtilites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSpaceUtilites.m; sourceTree = "<group>"; };
 		ABB900671D23878D00ED431E /* ColorSpaceUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSpaceUtilities.h; sourceTree = "<group>"; };
 		ABB900681D23878D00ED431E /* FastAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastAddressBook.h; sourceTree = "<group>"; };
 		ABB900691D23878D00ED431E /* FastAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastAddressBook.m; sourceTree = "<group>"; };
-		ABB9006A1D23878D00ED431E /* LinphoneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinphoneManager.h; sourceTree = "<group>"; };
 		ABB9006B1D23878D00ED431E /* LinphoneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinphoneManager.m; sourceTree = "<group>"; };
 		ABB9006C1D23878D00ED431E /* UILinphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILinphone.h; sourceTree = "<group>"; };
 		ABB9006D1D23878D00ED431E /* UILinphone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILinphone.m; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				146716071F4C238500B93D72 /* AVFoundation.framework in Frameworks */,
 				ABB900CE1D23889C00ED431E /* libantlr3c.a in Frameworks */,
 				ABB900CF1D23889C00ED431E /* libavcodec.a in Frameworks */,
 				ABB900D01D23889C00ED431E /* libavutil.a in Frameworks */,
@@ -170,11 +173,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		146716051F4C238400B93D72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				146716061F4C238500B93D72 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ABB900501D23872000ED431E = {
 			isa = PBXGroup;
 			children = (
 				ABB9005B1D23872000ED431E /* ucsipccsdk */,
 				ABB9005A1D23872000ED431E /* Products */,
+				146716051F4C238400B93D72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,7 +220,7 @@
 				ABB900671D23878D00ED431E /* ColorSpaceUtilities.h */,
 				ABB900681D23878D00ED431E /* FastAddressBook.h */,
 				ABB900691D23878D00ED431E /* FastAddressBook.m */,
-				ABB9006A1D23878D00ED431E /* LinphoneManager.h */,
+				1482ACF01F4AE9B30083B51E /* LinphoneManager.h */,
 				ABB9006B1D23878D00ED431E /* LinphoneManager.m */,
 				ABB9006C1D23878D00ED431E /* UILinphone.h */,
 				ABB9006D1D23878D00ED431E /* UILinphone.m */,

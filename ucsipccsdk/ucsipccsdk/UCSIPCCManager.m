@@ -187,7 +187,7 @@ static id _ucsIPCCDelegate =nil; //代理对象，用于回调
     linphone_core_add_auth_info(lc, info);
     linphone_core_add_proxy_config(lc, proxyCfg);
     linphone_core_set_default_proxy_config(lc, proxyCfg);
-    ms_free(identity);
+    ms_free((void *)identity);
 
     
     [UCSIPCCSDKLog saveDemoLogInfo:@"登陆信息配置成功" withDetail:[NSString stringWithFormat:@"username:%@,\npassword:%@,\ndisplayName:%@\ndomain:%@,\nport:%@\ntransport:%@", username, password, displayName, domain, port, transport]];
@@ -315,7 +315,7 @@ static id _ucsIPCCDelegate =nil; //代理对象，用于回调
  获取通话状态
  */
 - (UCSCallState)getCallState:(UCSCall *)call {
-    return linphone_call_get_state(call);
+    return (UCSCallState)linphone_call_get_state(call);
 }
 
 
@@ -344,7 +344,7 @@ static id _ucsIPCCDelegate =nil; //代理对象，用于回调
     if (self.currentCall == nil) {
         return nil;
     }
-    LinphoneAddress *address = linphone_call_get_remote_address(self.currentCall);
+    const LinphoneAddress *address = linphone_call_get_remote_address(self.currentCall);
     
     char *uri = linphone_address_as_string_uri_only(address);
     NSString *addressStr = [NSString stringWithUTF8String:uri];
@@ -376,10 +376,10 @@ static id _ucsIPCCDelegate =nil; //代理对象，用于回调
     if (self.currentCall == nil) {
         return nil;
     }
-    LinphoneAddress *address = linphone_core_get_current_call_remote_address(LC);
+    const LinphoneAddress *address = linphone_core_get_current_call_remote_address(LC);
 //    LinphoneAddress *parsed = linphone_core_get_primary_contact_parsed(LC);
     
-    char *uri = linphone_address_get_display_name(address);
+    const char *uri = linphone_address_get_display_name(address);
     if (uri) {
         return [NSString stringWithUTF8String:uri];
     }
@@ -396,7 +396,7 @@ static id _ucsIPCCDelegate =nil; //代理对象，用于回调
     if (!self.currentCall) {
         return nil;
     }
-    return linphone_call_get_current_params(self.currentCall);
+    return (UCSCallParams *)linphone_call_get_current_params(self.currentCall);
 }
 
 

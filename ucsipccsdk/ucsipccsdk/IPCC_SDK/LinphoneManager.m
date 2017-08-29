@@ -567,7 +567,7 @@ void linphone_iphone_log_handler(int lev, const char *fmt, va_list args){
 //Error/warning log handler
 static void linphone_iphone_log(struct _LinphoneCore * lc, const char * message) {
 	NSString* log = [NSString stringWithCString:message encoding:[NSString defaultCStringEncoding]];
-//	NSLog(log, NULL);
+	NSLog(log, NULL);
 
 //    dispatch_async(dispatch_get_main_queue(), ^{
 //        if([[LinphoneManager instance].logs count] >= LINPHONE_LOGS_MAX_ENTRY) {
@@ -807,7 +807,7 @@ static void linphone_iphone_display_status(struct _LinphoneCore * lc, const char
             case UCSCallOutgoingInit:{
                 [UCSIPCCSDKLog saveDemoLogInfo:@"通话已呼出" withDetail:[NSString stringWithFormat:@"state:%d,\nmessage:%@", state, msgDic]];
                 if ([[UCSIPCCManager instance].delegate respondsToSelector:@selector(onOutgoingCall:withState:withMessage:)]) {
-                    [[UCSIPCCManager instance].delegate onOutgoingCall:call withState:state withMessage:msgDic];
+                    [[UCSIPCCManager instance].delegate onOutgoingCall:call withState:(UCSCallState)state withMessage:msgDic];
                 }
                 break;
             }
@@ -816,7 +816,7 @@ static void linphone_iphone_display_status(struct _LinphoneCore * lc, const char
                 msgDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithUTF8String:message], @"message", [[UCSIPCCManager instance] getRemoteAddress], @"remote_address", [NSString stringWithUTF8String:linphone_core_get_identity([LinphoneManager getLc])], @"called_address", nil];
                 [UCSIPCCSDKLog saveDemoLogInfo:@"收到来电" withDetail:[NSString stringWithFormat:@"state:%d,\nmessage:%@", state, msgDic]];
                 if ([[UCSIPCCManager instance].delegate respondsToSelector:@selector(onIncomingCall:withState:withMessage:)]) {
-                    [[UCSIPCCManager instance].delegate onIncomingCall:call withState:state withMessage:msgDic];
+                    [[UCSIPCCManager instance].delegate onIncomingCall:call withState:(UCSCallState)state withMessage:msgDic];
                 }
                 break;
             }
@@ -824,7 +824,7 @@ static void linphone_iphone_display_status(struct _LinphoneCore * lc, const char
             case UCSCallConnected: {
                 [UCSIPCCSDKLog saveDemoLogInfo:@"通话已建立连接" withDetail:[NSString stringWithFormat:@"state:%d,\nmessage:%@", state, msgDic]];
                 if ([[UCSIPCCManager instance].delegate respondsToSelector:@selector(onAnswer:withState:withMessage:)]) {
-                    [[UCSIPCCManager instance].delegate onAnswer:call withState:state withMessage:msgDic];
+                    [[UCSIPCCManager instance].delegate onAnswer:call withState:(UCSCallState)state withMessage:msgDic];
                 }
                 break;
             }
@@ -833,7 +833,7 @@ static void linphone_iphone_display_status(struct _LinphoneCore * lc, const char
             case UCSCallEnd: {
                 [UCSIPCCSDKLog saveDemoLogInfo:@"通话结束" withDetail:[NSString stringWithFormat:@"state:%d,\nmessage:%@", state, msgDic]];
                 if ([[UCSIPCCManager instance].delegate respondsToSelector:@selector(onHangUp:withState:withMessage:)]) {
-                    [[UCSIPCCManager instance].delegate onHangUp:call withState:state withMessage:msgDic];
+                    [[UCSIPCCManager instance].delegate onHangUp:call withState:(UCSCallState)state withMessage:msgDic];
                 }
                 break;
             }
@@ -934,7 +934,7 @@ static void linphone_iphone_configuring_status_changed(LinphoneCore *lc, Linphon
     
     // 处理回调
     if ([UCSIPCCManager instance].delegate  && [[UCSIPCCManager instance].delegate respondsToSelector:@selector(onRegisterStateChange:message:)]) {
-        return [[UCSIPCCManager instance].delegate onRegisterStateChange:state message:message];
+        return [[UCSIPCCManager instance].delegate onRegisterStateChange:(UCSRegistrationState)state message:message];
         
     }
 }
@@ -1341,7 +1341,7 @@ static LinphoneCoreVTable linphonec_vtable = {
 	NSString *chatDBFileName      = [LinphoneManager documentFile:kLinphoneInternalChatDBFilename];
 	const char* lRootCa           = [[LinphoneManager bundleFile:@"rootca.pem"] cStringUsingEncoding:[NSString defaultCStringEncoding]];
 
-	linphone_core_set_user_agent(theLinphoneCore, [[[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"] stringByAppendingString:@"Iphone"] UTF8String], @"");
+	linphone_core_set_user_agent(theLinphoneCore, [[[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"] stringByAppendingString:@"Iphone"] UTF8String], [@"" UTF8String]);
 
 	[_contactSipField release];
 	_contactSipField = [[self lpConfigStringForKey:@"contact_im_type_value" withDefault:@"SIP"] retain];
@@ -1970,7 +1970,7 @@ static void audioRouteChangeListenerCallback (
 	if (linphoneAddress) {
 
 		if(displayName!=nil) {
-            char *display_name = [displayName cStringUsingEncoding:[NSString defaultCStringEncoding]];
+            const char *display_name = [displayName cStringUsingEncoding:[NSString defaultCStringEncoding]];
 			linphone_address_set_display_name(linphoneAddress, display_name);
 		}
 		if ([[LinphoneManager instance] lpConfigBoolForKey:@"override_domain_with_default_one"])

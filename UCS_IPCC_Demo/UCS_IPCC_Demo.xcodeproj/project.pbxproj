@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB3B9C701D2A46B6006828F4 /* libucsipccsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3B9C6F1D2A46B6006828F4 /* libucsipccsdk.a */; };
+		146716041F4C225200B93D72 /* libucsipccsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146716031F4C225200B93D72 /* libucsipccsdk.a */; };
+		1482ACEF1F4AE8720083B51E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1482ACEE1F4AE8720083B51E /* AVFoundation.framework */; };
 		AB98D4BE1D2614670034FEF0 /* CallOutgoingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB98D4BD1D2614670034FEF0 /* CallOutgoingView.m */; };
 		AB98D4C01D26146C0034FEF0 /* CallOutgoingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB98D4BF1D26146C0034FEF0 /* CallOutgoingView.xib */; };
 		AB98D4C31D2617230034FEF0 /* CallIncomingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB98D4C21D2617230034FEF0 /* CallIncomingView.m */; };
@@ -20,7 +21,6 @@
 		ABB9008A1D2387F000ED431E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB900761D2387EF00ED431E /* AddressBookUI.framework */; };
 		ABB9008B1D2387F000ED431E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB900771D2387EF00ED431E /* AssetsLibrary.framework */; };
 		ABB9008C1D2387F000ED431E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB900781D2387EF00ED431E /* AudioToolbox.framework */; };
-		ABB9008D1D2387F000ED431E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB900791D2387EF00ED431E /* AVFoundation.framework */; };
 		ABB9008E1D2387F000ED431E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB9007A1D2387EF00ED431E /* CFNetwork.framework */; };
 		ABB9008F1D2387F000ED431E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB9007B1D2387EF00ED431E /* CoreAudio.framework */; };
 		ABB900901D2387F000ED431E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB9007C1D2387EF00ED431E /* CoreGraphics.framework */; };
@@ -505,10 +505,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		14F243081F1F594500EF4380 /* UCSIPCCClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UCSIPCCClass.h; path = UCS_IPCC_Demo/Vendors/UCSIPCCClass.h; sourceTree = SOURCE_ROOT; };
-		14F243091F1F594500EF4380 /* UCSIPCCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UCSIPCCDelegate.h; path = UCS_IPCC_Demo/Vendors/UCSIPCCDelegate.h; sourceTree = SOURCE_ROOT; };
-		14F2430A1F1F594500EF4380 /* UCSIPCCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UCSIPCCManager.h; path = UCS_IPCC_Demo/Vendors/UCSIPCCManager.h; sourceTree = SOURCE_ROOT; };
-		AB3B9C6F1D2A46B6006828F4 /* libucsipccsdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libucsipccsdk.a; path = "../../../../../Library/Developer/Xcode/DerivedData/UCS_IPCC-bsjgtdcovigvmvdcrybbvdtxvife/Build/Products/Debug-iphoneos/libucsipccsdk.a"; sourceTree = "<group>"; };
+		146715FD1F4BCD3000B93D72 /* UCSIPCCClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCSIPCCClass.h; sourceTree = "<group>"; };
+		146715FE1F4BCD3000B93D72 /* UCSIPCCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCSIPCCDelegate.h; sourceTree = "<group>"; };
+		146715FF1F4BCD3000B93D72 /* UCSIPCCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCSIPCCManager.h; sourceTree = "<group>"; };
+		146716031F4C225200B93D72 /* libucsipccsdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libucsipccsdk.a; sourceTree = "<group>"; };
+		1482ACEE1F4AE8720083B51E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AB98D4BC1D2614670034FEF0 /* CallOutgoingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallOutgoingView.h; sourceTree = "<group>"; };
 		AB98D4BD1D2614670034FEF0 /* CallOutgoingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOutgoingView.m; sourceTree = "<group>"; };
 		AB98D4BF1D26146C0034FEF0 /* CallOutgoingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallOutgoingView.xib; sourceTree = "<group>"; };
@@ -526,7 +527,6 @@
 		ABB900761D2387EF00ED431E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AddressBookUI.framework; sourceTree = DEVELOPER_DIR; };
 		ABB900771D2387EF00ED431E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
 		ABB900781D2387EF00ED431E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
-		ABB900791D2387EF00ED431E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		ABB9007A1D2387EF00ED431E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		ABB9007B1D2387EF00ED431E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = DEVELOPER_DIR; };
 		ABB9007C1D2387EF00ED431E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -1038,7 +1038,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABB900AB1D23887C00ED431E /* libxml2.tbd in Frameworks */,
-				AB3B9C701D2A46B6006828F4 /* libucsipccsdk.a in Frameworks */,
 				ABB900A91D23887000ED431E /* libresolv.tbd in Frameworks */,
 				ABB900A71D23886900ED431E /* libstdc++.6.tbd in Frameworks */,
 				ABB900A51D23886200ED431E /* libc++.tbd in Frameworks */,
@@ -1049,7 +1048,7 @@
 				ABB9008A1D2387F000ED431E /* AddressBookUI.framework in Frameworks */,
 				ABB9008B1D2387F000ED431E /* AssetsLibrary.framework in Frameworks */,
 				ABB9008C1D2387F000ED431E /* AudioToolbox.framework in Frameworks */,
-				ABB9008D1D2387F000ED431E /* AVFoundation.framework in Frameworks */,
+				1482ACEF1F4AE8720083B51E /* AVFoundation.framework in Frameworks */,
 				ABB9008E1D2387F000ED431E /* CFNetwork.framework in Frameworks */,
 				ABB9008F1D2387F000ED431E /* CoreAudio.framework in Frameworks */,
 				ABB900901D2387F000ED431E /* CoreGraphics.framework in Frameworks */,
@@ -1064,6 +1063,7 @@
 				ABB900991D2387F000ED431E /* OpenGLES.framework in Frameworks */,
 				ABB9009A1D2387F000ED431E /* QuartzCore.framework in Frameworks */,
 				ABB9009B1D2387F000ED431E /* SystemConfiguration.framework in Frameworks */,
+				146716041F4C225200B93D72 /* libucsipccsdk.a in Frameworks */,
 				ABB9009C1D2387F000ED431E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1129,7 +1129,7 @@
 				ABB900761D2387EF00ED431E /* AddressBookUI.framework */,
 				ABB900771D2387EF00ED431E /* AssetsLibrary.framework */,
 				ABB900781D2387EF00ED431E /* AudioToolbox.framework */,
-				ABB900791D2387EF00ED431E /* AVFoundation.framework */,
+				1482ACEE1F4AE8720083B51E /* AVFoundation.framework */,
 				ABB9007A1D2387EF00ED431E /* CFNetwork.framework */,
 				ABB9007B1D2387EF00ED431E /* CoreAudio.framework */,
 				ABB9007C1D2387EF00ED431E /* CoreGraphics.framework */,
@@ -1152,10 +1152,10 @@
 		ABB900FA1D23914A00ED431E /* IPCC_SDK */ = {
 			isa = PBXGroup;
 			children = (
-				14F243081F1F594500EF4380 /* UCSIPCCClass.h */,
-				14F243091F1F594500EF4380 /* UCSIPCCDelegate.h */,
-				14F2430A1F1F594500EF4380 /* UCSIPCCManager.h */,
-				AB3B9C6F1D2A46B6006828F4 /* libucsipccsdk.a */,
+				146715FD1F4BCD3000B93D72 /* UCSIPCCClass.h */,
+				146715FE1F4BCD3000B93D72 /* UCSIPCCDelegate.h */,
+				146715FF1F4BCD3000B93D72 /* UCSIPCCManager.h */,
+				146716031F4C225200B93D72 /* libucsipccsdk.a */,
 			);
 			path = IPCC_SDK;
 			sourceTree = "<group>";
@@ -1193,10 +1193,10 @@
 		ABBBE7671D24FBCE00F9D3F4 /* UCS_UI */ = {
 			isa = PBXGroup;
 			children = (
-				ABBBEBB41D253D3400F9D3F4 /* UIView+Convenience.h */,
-				ABBBEBB51D253D3400F9D3F4 /* UIView+Convenience.m */,
 				ABBBEBA61D251E1B00F9D3F4 /* DTFoundation */,
 				ABBBE7801D24FFFD00F9D3F4 /* TPMultiLayoutViewController */,
+				ABBBEBB41D253D3400F9D3F4 /* UIView+Convenience.h */,
+				ABBBEBB51D253D3400F9D3F4 /* UIView+Convenience.m */,
 				ABBBEBAE1D251E9D00F9D3F4 /* UITransparentTVCell.h */,
 				ABBBEBAF1D251E9D00F9D3F4 /* UITransparentTVCell.m */,
 				ABBBEBA31D251D5A00F9D3F4 /* UIConferenceHeader.h */,
@@ -2310,7 +2310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2348,7 +2348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -2363,8 +2363,12 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/UCS_IPCC_Demo/ipcc.pch";
 				INFOPLIST_FILE = UCS_IPCC_Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UCS_IPCC_Demo/IPCC_SDK",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jozo.UCS-IPCC-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2382,8 +2386,12 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/UCS_IPCC_Demo/ipcc.pch";
 				INFOPLIST_FILE = UCS_IPCC_Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UCS_IPCC_Demo/IPCC_SDK",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jozo.UCS-IPCC-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";

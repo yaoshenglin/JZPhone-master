@@ -19,8 +19,9 @@
 
 #import "UIDigitButtonLongVoiceMail.h"
 //#import "Utils.h"
-//#include "LinphoneManager.h"
+#import "UCSIPCCClass.h"
 
+@class LinphoneManager;
 @implementation UIDigitButtonLongVoiceMail
 
 #pragma mark - UILongTouchButtonDelegate Functions
@@ -34,12 +35,18 @@
 //		[lm call:[lm lpConfigStringForKey:@"voice_mail_uri"] displayName:NSLocalizedString(@"Voice mail",nil) transfer:FALSE];
 //	}
 }
-//
-//- (BOOL) voiceMailEnabled {
-//	NSString * voiceMailUri = [[LinphoneManager instance] lpConfigStringForKey:@"voice_mail_uri" withDefault:NULL];
-//
-//	return (voiceMailUri != NULL);
-//}
+
+- (BOOL) voiceMailEnabled
+{
+    id linManager = [NSClassFromString(@"LinphoneManager") instance];
+    SEL action = NSSelectorFromString(@"lpConfigStringForKey:withDefault:");
+    //action = @selector(drawAtPoint:forWidth:withFont:minFontSize:actualFontSize:lineBreakMode:baselineAdjustment:);
+    IMP imp = [linManager methodForSelector:action];
+    NSString *(*func)(id, SEL,NSString *,NSString *) = (void *)imp;
+    NSString *voiceMailUri = func(linManager, action,@"voice_mail_uri",NULL);
+
+	return (voiceMailUri != NULL);
+}
 
 - (void)refreshUI {
 	NSString *name = @"numpad_one_";

@@ -18,7 +18,6 @@
  */              
 
 #import "UICallButton.h"
-//#import "LinphoneManager.h"
 
 #import <CoreTelephony/CTCallCenter.h>
 

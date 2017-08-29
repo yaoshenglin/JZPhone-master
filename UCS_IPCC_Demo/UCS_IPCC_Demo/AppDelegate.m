@@ -50,8 +50,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userConfigSucceedEvent) name:@"removeConfigSucceed" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goConfigEvent) name:@"goConfig" object:nil];
-    
-    
 }
 
 - (void)setUCSSDK {
@@ -130,17 +128,18 @@
 //    }
 //}
 
-- (void)userConfigSucceedEvent {
-    
+- (void)userConfigSucceedEvent
+{
     self.vc = nil;
     self.dialerVC = [DialerViewController new];
     self.window.rootViewController = self.dialerVC;
 }
 
-- (void)goConfigEvent {
+- (void)goConfigEvent
+{
     // 进入设置
     self.dialerVC = nil;
-//    self.vc = (ViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
+    //self.vc = (ViewController *)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
     self.vc = [SettingViewController new];
     self.window.rootViewController = self.vc;
 }
@@ -148,7 +147,7 @@
 
 - (void)onRegisterStateChange:(UCSRegistrationState)state message:(const char *)message
 {
-//    NSLog(@"{\nstate:%d, \nmessage:%s\n}", state, message);
+    //NSLog(@"{\nstate:%d, \nmessage:%s\n}", state, message);
     [self.dialerVC onRegisterStateChange:state message:message];
 }
 
