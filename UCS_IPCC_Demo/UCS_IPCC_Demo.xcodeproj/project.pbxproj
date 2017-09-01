@@ -1117,12 +1117,12 @@
 		ABB9009D1D23883100ED431E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ABB900AA1D23887C00ED431E /* libxml2.tbd */,
-				ABB900A81D23887000ED431E /* libresolv.tbd */,
-				ABB900A61D23886900ED431E /* libstdc++.6.tbd */,
 				ABB900A41D23886200ED431E /* libc++.tbd */,
-				ABB900A21D23885A00ED431E /* libsqlite3.tbd */,
 				ABB900A01D23885400ED431E /* libiconv.tbd */,
+				ABB900A81D23887000ED431E /* libresolv.tbd */,
+				ABB900A21D23885A00ED431E /* libsqlite3.tbd */,
+				ABB900A61D23886900ED431E /* libstdc++.6.tbd */,
+				ABB900AA1D23887C00ED431E /* libxml2.tbd */,
 				ABB9009E1D23884D00ED431E /* libz.tbd */,
 				ABB900881D2387F000ED431E /* UIKit.framework */,
 				ABB900751D2387EF00ED431E /* AddressBook.framework */,

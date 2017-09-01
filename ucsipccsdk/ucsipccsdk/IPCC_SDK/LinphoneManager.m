@@ -23,7 +23,7 @@
 #include <netdb.h>
 #include <sys/sysctl.h>
 
-#import <AVFoundation/AVAudioSession.h>
+#import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <CoreTelephony/CTCallCenter.h>
@@ -39,15 +39,13 @@
 #import "UCSIPCCManager.h"
 //#import "LinphoneIOSVersion.h"
 
-#import <AVFoundation/AVAudioPlayer.h>
-
 #define LINPHONE_LOGS_MAX_ENTRY 5000
 
 static void audioRouteChangeListenerCallback (
-											  void                   *inUserData,                                 // 1
-											  AudioSessionPropertyID inPropertyID,                                // 2
-											  UInt32                 inPropertyValueSize,                         // 3
-											  const void             *inPropertyValue                             // 4
+											  void *inUserData,                     // 1
+											  AudioSessionPropertyID inPropertyID,  // 2
+											  UInt32 inPropertyValueSize,           // 3
+											  const void *inPropertyValue           // 4
 											  );
 static LinphoneCore* theLinphoneCore = nil;
 static LinphoneManager* theLinphoneManager = nil;
@@ -1523,7 +1521,8 @@ static BOOL libStarted = FALSE;
 #endif
 
     /*to make sure we don't loose debug trace*/
-    if ([self lpConfigBoolForKey:@"debugenable_preference"]) {
+    BOOL lpConfig = [self lpConfigBoolForKey:@"debugenable_preference"];
+    if (lpConfig) {
         linphone_core_enable_logs_with_cb((OrtpLogFunc)linphone_iphone_log_handler);
         ortp_set_log_level_mask(ORTP_DEBUG|ORTP_MESSAGE|ORTP_WARNING|ORTP_ERROR|ORTP_FATAL);
 		/*must be done before creating linphone core to get its traces too*/

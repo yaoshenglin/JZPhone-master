@@ -52,8 +52,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goConfigEvent) name:@"goConfig" object:nil];
 }
 
-- (void)setUCSSDK {
-    
+- (void)setUCSSDK
+{
     [[UCSIPCCManager instance] startUCSphone];
     
     [[UCSIPCCManager instance] setDelegate:self];
@@ -69,8 +69,6 @@
         // 自动设置注册信息
         [[UCSIPCCManager instance] addProxyConfig:name password:password displayName:displayName domain:domain port:port withTransport:transport];
     }
-    
-    
 }
 
 /**
@@ -144,15 +142,16 @@
     self.window.rootViewController = self.vc;
 }
 
-
+#pragma mark - --------UCSIPCCDelegate------------------------
 - (void)onRegisterStateChange:(UCSRegistrationState)state message:(const char *)message
 {
-    //NSLog(@"{\nstate:%d, \nmessage:%s\n}", state, message);
+    NSLog(@"{\nstate:%d, \nmessage:%s\n}", state, message);
     [self.dialerVC onRegisterStateChange:state message:message];
 }
 
 - (void)onOutgoingCall:(UCSCall *)call withState:(UCSCallState)state withMessage:(NSDictionary *)message
 {
+    //呼叫开始
     CallOutgoingView *vc = [CallOutgoingView new];
     [self.window.rootViewController presentViewController:vc animated:YES completion:^{
         
@@ -163,9 +162,7 @@
 {
     CallIncomingView *vc = [CallIncomingView new];
     vc.call = call;
-    [self.window.rootViewController presentViewController:vc animated:YES completion:^{
-        
-    }];
+    [self.window.rootViewController presentViewController:vc animated:YES completion:^{}];
 }
 
 - (void)onDialFailed:(UCSCallState)state withMessage:(NSDictionary *)message {
@@ -174,6 +171,7 @@
 
 - (void)onHangUp:(UCSCall *)call withState:(UCSCallState)state withMessage:(NSDictionary *)message
 {
+    //结束呼叫
     [[NSNotificationCenter defaultCenter] postNotificationName:@"UCS_Call_Released" object:nil userInfo:nil];
 }
 
